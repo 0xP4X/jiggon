@@ -31,9 +31,12 @@ ENV_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
 load_dotenv(ENV_PATH)
 
 class CandlestickChart(PlotextPlot):
-    def update_chart(self, dates, opens, highs, lows, closes):
+    def update_chart(self, dates, opens, highs, lows, closes, theme="classic"):
         self.plt.clear_figure()
         self.plt.theme('dark')
+        self.plt.canvas_color((54, 58, 79))
+        self.plt.axes_color((54, 58, 79))
+        self.plt.ticks_color((202, 211, 245))
         self.plt.date_form('d/m/Y H:M:S')
         data = {
             "Open": opens,
@@ -41,8 +44,39 @@ class CandlestickChart(PlotextPlot):
             "Low": lows,
             "Close": closes
         }
-        self.plt.candlestick(dates, data)
+        
+        if theme == "catppuccin":
+            candle_colors = [(166, 218, 149), (237, 135, 150)]
+        elif theme == "neon":
+            candle_colors = [(0, 255, 255), (255, 0, 255)]
+        elif theme == "mono":
+            candle_colors = [(255, 255, 255), (100, 100, 100)]
+        else:
+            candle_colors = ["green", "red"]
+            
+        self.plt.candlestick(dates, data, colors=candle_colors)
         self.refresh()
+
+class SplashScreen(Screen):
+    def compose(self) -> ComposeResult:
+        ascii_art = """
+   ___(_)__ _  __ _ ___  ___ 
+  / _ / / _ `// _ `/ _ \/ _ \\
+  \___/_/\_, / \_, /\___/_//_/
+        /___/ /___/          
+        """
+        yield Vertical(
+            Label(ascii_art, id="splash_logo"),
+            Label("Initializing Quant Engine...", id="splash_text"),
+            id="splash_container"
+        )
+        
+    def on_mount(self) -> None:
+        self.set_timer(2.0, self.finish_splash)
+        
+    def finish_splash(self) -> None:
+        self.app.pop_screen()
+        self.app.push_screen("wizard")
 
 class OnboardingWizard(Screen):
     def compose(self) -> ComposeResult:
@@ -83,11 +117,25 @@ class OnboardingWizard(Screen):
                     classes="input_col"
                 )
             ),
-            Label("Strategy Aggression", classes="wizard_label"),
-            Select(
-                options=[("Conservative", "cons"), ("Balanced", "bal"), ("Aggressive", "agg")],
-                value="bal",
-                id="aggression_select"
+            Horizontal(
+                Vertical(
+                    Label("Strategy Aggression", classes="wizard_label"),
+                    Select(
+                        options=[("Conservative", "cons"), ("Balanced", "bal"), ("Aggressive", "agg")],
+                        value="bal",
+                        id="aggression_select"
+                    ),
+                    classes="input_col"
+                ),
+                Vertical(
+                    Label("Chart Theme", classes="wizard_label"),
+                    Select(
+                        options=[("Jiggon Midnight", "catppuccin"), ("Jiggon Cyberpunk", "neon"), ("Classic Terminal", "classic"), ("Jiggon Monochrome", "mono")],
+                        value="catppuccin",
+                        id="theme_select"
+                    ),
+                    classes="input_col"
+                )
             ),
             Horizontal(
                 Vertical(
@@ -127,6 +175,7 @@ class OnboardingWizard(Screen):
                 self.query_one("#symbol_input", Input).value = str(cfg.get("symbol", "100"))
                 self.query_one("#duration_input", Input).value = str(cfg.get("duration", "5"))
                 self.query_one("#aggression_select", Select).value = cfg.get("aggression", "bal")
+                self.query_one("#theme_select", Select).value = cfg.get("chart_theme", "catppuccin")
             except Exception:
                 pass
 
@@ -136,6 +185,7 @@ class OnboardingWizard(Screen):
             self.query_one("#custom_script_label").display = is_custom
             self.query_one("#custom_script_area").display = is_custom
 
+    def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "launch_btn":
             try:
                 drawdown_val = float(self.query_one("#drawdown_input", Input).value)
@@ -162,6 +212,7 @@ class OnboardingWizard(Screen):
                 self.app.symbol = raw_symbol
                 
             self.app.aggression = self.query_one("#aggression_select", Select).value
+            self.app.chart_theme = self.query_one("#theme_select", Select).value
             self.app.api_token = self.query_one("#token_input", Input).value
             self.app.custom_script_text = self.query_one("#custom_script_area", TextArea).text
             
@@ -179,7 +230,8 @@ class OnboardingWizard(Screen):
                 "stake": self.app.stake_size,
                 "symbol": raw_symbol,
                 "duration": self.app.duration,
-                "aggression": self.app.aggression
+                "aggression": self.app.aggression,
+                "chart_theme": self.app.chart_theme
             }
             try:
                 config_path = os.path.join(os.path.dirname(__file__), "..", "jiggon_config.json")
@@ -193,10 +245,26 @@ class OnboardingWizard(Screen):
 
 class JiggonTerminal(App):
     TITLE = "Jiggon Quant Terminal"
+    SUB_TITLE = "Core by 0xP4X"
     
     CSS = """
     Screen {
         background: #24273a;
+    }
+    #splash_container {
+        align: center middle;
+        height: 100%;
+        background: #1e2030;
+    }
+    #splash_logo {
+        text-align: center;
+        color: #8aadf4;
+        text-style: bold;
+    }
+    #splash_text {
+        text-align: center;
+        color: #cad3f5;
+        margin-top: 2;
     }
     #main_container {
         width: 100%;
@@ -241,7 +309,7 @@ class JiggonTerminal(App):
         background: rgba(36, 39, 58, 0.6);
     }
     #wizard_dialog {
-        width: 45;
+        width: 60;
         height: auto;
         padding: 1 2;
         background: #363a4f;
@@ -325,7 +393,8 @@ class JiggonTerminal(App):
 
     def on_mount(self) -> None:
         self.install_screen(OnboardingWizard(), name="wizard")
-        self.push_screen("wizard")
+        self.install_screen(SplashScreen(), name="splash")
+        self.push_screen("splash")
         
         conf_table = self.query_one("#confidence_table", DataTable)
         conf_table.add_columns("Metric", "Weight", "Status")
@@ -620,7 +689,8 @@ class JiggonTerminal(App):
             list(self.market.opens)[-self.chart_zoom:],
             list(self.market.highs)[-self.chart_zoom:],
             list(self.market.lows)[-self.chart_zoom:],
-            list(self.market.closes)[-self.chart_zoom:]
+            list(self.market.closes)[-self.chart_zoom:],
+            theme=getattr(self, "chart_theme", "classic")
         )
 
         conf_table = self.query_one("#confidence_table", DataTable)
