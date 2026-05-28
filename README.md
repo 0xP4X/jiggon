@@ -99,4 +99,20 @@ Focus areas:
 *   Adding support for Forex CFDs instead of just Binary Options.
 
 ---
-*Disclaimer: Trading is risky. This software is provided as-is with no guarantees. Always use a Demo account to test strategies thoroughly before using real money.*
+
+## ⚖️ Legal Disclaimer & Liability (READ BEFORE USE)
+
+**Jiggon is provided strictly for educational and informational purposes only.**
+
+By downloading, installing, or using this software, you explicitly agree to the following:
+1. **No Financial Advice:** Nothing in this repository constitutes financial, investment, or trading advice. The algorithms and risk models provided are experimental.
+2. **Assumption of Risk:** Trading in financial markets, especially algorithmic trading of derivatives or binary options, carries a high level of risk and may not be suitable for all investors. You could lose some or all of your initial investment. 
+3. **No Warranty:** This software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
+4. **Limitation of Liability:** In no event shall the authors, contributors, or copyright holders be liable for any claim, damages, financial loss, or other liability, whether in an action of contract, tort or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+
+**You are solely responsible for your own trading decisions and any financial losses that may result from using this bot.** We strongly recommend using the built-in **Demo Mode** extensively before ever considering connecting a Live API token.
+
+---
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
