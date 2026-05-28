@@ -59,9 +59,9 @@ class CandlestickChart(PlotextPlot):
 
 class SplashScreen(Screen):
     def compose(self) -> ComposeResult:
-        ascii_art = """
+        ascii_art = r"""
    ___(_)__ _  __ _ ___  ___ 
-  / _ / / _ `// _ `/ _ \/ _ \\
+  / _ / / _ `// _ `/ _ \/ _ \
   \___/_/\_, / \_, /\___/_//_/
         /___/ /___/          
         """
