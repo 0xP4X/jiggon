@@ -1,118 +1,118 @@
-# Jiggon CLI Trading Bot 📈
+# Jiggon Quantitative Trading Terminal
 
-Welcome to **Jiggon**, an open-source, fully interactive Command Line Interface (CLI) quantitative trading bot. Jiggon is designed for both novices looking to start algorithmic trading and experts who want a highly strict, risk-first approach to trading on Deriv.
-
-Unlike many open-source bots that use "mock" features or paper-trading simulations, Jiggon is **ready for real live trading out of the box** using the Deriv WebSocket API.
+## Table of Contents
+1. [Overview](#overview)
+2. [System Architecture](#system-architecture)
+3. [Features & Capabilities](#features--capabilities)
+4. [Installation & Setup](#installation--setup)
+5. [Operational Guide](#operational-guide)
+6. [Risk Management Framework](#risk-management-framework)
+7. [Strategy Customization](#strategy-customization)
+8. [Legal Disclaimer & Liability](#legal-disclaimer--liability)
 
 ---
 
-## 🚀 Features
+## Overview
 
-*   **Real Financial Execution:** Connects directly to the Deriv API to execute Binary Option (Rise/Fall) contracts in real-time.
-*   **Premium Terminal User Interface (TUI):** A beautiful, high-contrast dark theme (Catppuccin Macchiato) UI directly in your terminal.
-*   **AI & Logic Gates:** Trades are only executed if they pass:
-    *   Technical Analysis constraints (EMA, RSI, ATR).
-    *   Risk Management gates (Max Drawdown, Consecutive Losses, Safe Mode).
-    *   AI Probability engine.
-*   **Dual Environments:** Seamlessly switch between **Demo** (Paper Trading with a Demo token) and **Live** (Real Funds) from the startup wizard.
+**Jiggon** is an open-source, fully interactive Command Line Interface (CLI) quantitative trading bot. It is engineered to facilitate rigorous algorithmic trading on the [Deriv API](https://api.deriv.com/), executing Binary Options contracts with institutional-grade risk management protocols.
 
-## 🛠️ Quick Start Guide for Novices
+The software is constructed to eliminate emotional trading variables by strictly adhering to quantitative thresholds, multi-timeframe analysis, and automated risk enforcement mechanisms.
 
-### 1. Prerequisites
+## System Architecture
 
-You need Python installed on your computer.
-*   [Download Python (Windows/Mac/Linux)](https://www.python.org/downloads/)
+The application is structured around a modular execution pipeline. Key components include:
 
-### 2. Get a Deriv API Token
+*   **[DerivWebSocket](app/data/deriv_ws.py):** Establishes an asynchronous, persistent WebSocket connection to the Deriv API for real-time tick data ingestion.
+*   **[BrokerClient](app/broker/client.py):** Manages account authentication, balance verification, and live contract execution routing.
+*   **[MarketSnapshot](app/analysis/market.py):** Processes raw tick data into synthetically constructed OHLC (Open, High, Low, Close) candles to calculate critical technical indicators (EMA, RSI, ATR, MACD).
+*   **[ExecutionEngine](app/execution/engine.py):** The central decision matrix that cross-references technical signals with the `RiskState` to authorize or veto pending executions.
 
-To trade (even in Demo mode), Jiggon needs an API token to connect to your Deriv account.
-1.  Go to [Deriv.com](https://deriv.com/) and create a free account.
-2.  Switch to your **Demo Account**.
-3.  Go to **Settings > API Token**.
-4.  Create a new token with **Read** and **Trade** permissions. Name it `JiggonDemo`.
-5.  Copy the generated token.
+## Features & Capabilities
 
-### 3. Installation
+*   **Real-Time Execution:** Low-latency order routing directly to the Deriv WebSocket API for Rise/Fall contracts.
+*   **Terminal User Interface (TUI):** A robust interface built on the [Textual](https://textual.textualize.io/) framework, featuring real-time log ingestion, confidence checklists, and [Plotext](https://github.com/piccolomo/plotext) candlestick rendering.
+*   **Persistent Configuration:** Runtime parameters are automatically serialized to a local `jiggon_config.json` file to preserve state across application restarts.
+*   **Automated Trade Auditing:** All executed transactions, irrespective of outcome, are systematically logged to an external `trade_history.csv` file.
 
-Open your terminal or command prompt and run these commands:
+## Installation & Setup
+
+### System Requirements
+*   Python 3.10 or higher.
+*   A validated Deriv account and associated API Token with `Read` and `Trade` permissions.
+
+### Deployment Instructions
+
+Execute the following commands in an administrative terminal to deploy the application:
 
 ```powershell
-# 1. Navigate to the project directory (or clone it first)
+# Navigate to the project directory
 cd C:\Users\0day\Desktop\jiggon
 
-# 2. Create a virtual environment to keep things clean
+# Initialize the Python Virtual Environment
 python -m venv .venv
 
-# 3. Activate the virtual environment
+# Activate the Virtual Environment
 .\.venv\Scripts\Activate.ps1
 
-# 4. Install required libraries
+# Install package dependencies
 python -m pip install -r requirements.txt
 ```
 
-### 4. Running the Bot
+## Operational Guide
 
-Jiggon is a Terminal UI app. To launch the interactive interface:
+To initialize the terminal application, execute the main module:
 
 ```powershell
 python -m app.main
 ```
 
-### 5. Using the Onboarding Wizard
+Upon initialization, the Onboarding Configuration Wizard will request the following parameters:
 
-When the bot launches, you will see a popup wizard.
-1.  **Environment**: Select "Demo" to trade with virtual money.
-2.  **API Token**: Paste the Deriv token you created in step 2.
-3.  **Strategy**: Select "Master PDF Algorithm".
-4.  Click **Launch Terminal**.
+*   **Environment:** Select `Demo` for testing algorithms without financial risk, or `Live` for real-capital deployment.
+*   **API Token:** Input your secure Deriv token.
+*   **Strategy Aggression:** Modifies the sensitivity of the internal momentum oscillators (RSI). Options include Conservative, Balanced, or Aggressive.
+*   **Chart Theme:** Customizes the visual aesthetic of the internal candlestick chart rendering.
 
-## 📊 Navigating the Terminal
+### Keyboard Operations
+*   `s` : Instantly toggle the Safe Mode kill-switch.
+*   `w` : Reinitialize the Onboarding Configuration Wizard.
+*   `+` : Zoom the chart scale in.
+*   `-` : Zoom the chart scale out.
+*   `q` : Terminate the application thread safely.
 
-Once launched, the terminal is divided into several panels:
+## Risk Management Framework
 
-*   **Price Chart (Center):** Displays real-time live candlestick data for the selected asset (R_100 index by default).
-*   **System Log (Bottom):** Watch the bot's "brain" in real-time. It will explain why trades are taken or vetoed.
-*   **Confidence Table (Top Left):** Shows the real-time checklist. A trade needs all green checkmarks to fire.
-*   **Risk Engine (Top Middle):** Displays your current Drawdown limit, active signal direction, and the AI's risk evaluation.
-*   **Portfolio (Top Right):** Your live account balance, win rate, and session profit/loss.
+Jiggon is inherently designed to protect principal capital through multiple systemic gates:
 
-### Keyboard Shortcuts
+1.  **Maximum Daily Drawdown:** The application tracks realized session losses against the total portfolio balance. If the threshold (e.g., 5.0%) is breached, the bot permanently halts execution for the remainder of the session.
+2.  **Take-Profit Halting:** Users may define a strict nominal profit target. Upon reaching this target, the system engages Safe Mode to preserve realized gains.
+3.  **Abnormal Volatility Rejection:** The [Average True Range (ATR)](app/analysis/indicators.py) is monitored constantly. If the current ATR surpasses the configured safe threshold, trading is temporarily suspended due to erratic market conditions.
 
-*   Press `s` to instantly toggle **Safe Mode**. When Safe Mode is ON, the bot will analyze the market but block all real money trades.
-*   Press `w` to reopen the startup Wizard.
-*   Press `q` or `Ctrl+C` to quit the bot safely.
+## Strategy Customization
 
-## 🛡️ Risk Management (Safety First)
+The bot supports algorithmic customization via a Domain Specific Language (DSL). Users can input custom pseudo-code in the application wizard to override the default strategy.
 
-Jiggon is built to protect your capital. It enforces strict risk limits:
+**Example Custom Algorithm:**
+```text
+IF RSI < 45 AND EMA_TREND == BULLISH THEN BUY
+IF RSI > 55 AND EMA_TREND == BEARISH THEN SELL
+```
 
-*   **Max Daily Drawdown:** If your account drops by a certain percentage (default 5%), the bot goes into permanent lockdown for the session.
-*   **Abnormal Volatility Filter:** If the ATR (Average True Range) exceeds the normal threshold, the market is considered too chaotic and trades are blocked.
-*   **AI Veto:** The internal RuleBasedPredictor evaluates the momentum and MTF (Multi-Timeframe) alignment. If probability drops below 75%, it vetoes the trade.
-
-## 🤝 Contributing
-
-This is an open-source project. If you are an algorithmic trader, data scientist, or Python developer, pull requests are welcome! 
-Focus areas:
-*   Adding new Strategy Parsers in `app.strategy`.
-*   Expanding the AI Predictor (`app.ai.predictor`) to use Machine Learning (XGBoost/Scikit-Learn).
-*   Adding support for Forex CFDs instead of just Binary Options.
+The underlying parser will translate these constraints and route them through the `calculate_confidence` matrix in [confidence.py](app/strategy/confidence.py).
 
 ---
 
-## ⚖️ Legal Disclaimer & Liability (READ BEFORE USE)
+## Legal Disclaimer & Liability (READ BEFORE USE)
 
 **Jiggon is provided strictly for educational and informational purposes only.**
 
-By downloading, installing, or using this software, you explicitly agree to the following:
-1. **No Financial Advice:** Nothing in this repository constitutes financial, investment, or trading advice. The algorithms and risk models provided are experimental.
-2. **Assumption of Risk:** Trading in financial markets, especially algorithmic trading of derivatives or binary options, carries a high level of risk and may not be suitable for all investors. You could lose some or all of your initial investment. 
+By downloading, installing, compiling, or operating this software, you explicitly agree to the following conditions:
+
+1. **No Financial Advice:** Nothing in this repository constitutes financial, investment, or trading advice. The algorithms, mathematical models, and risk parameters provided are strictly experimental and intended for research purposes.
+2. **Assumption of Risk:** Trading in financial markets, especially algorithmic execution of derivatives or binary options, carries an exceptionally high level of risk. This software operates autonomously and may incur rapid financial losses. You may lose some or all of your initial investment.
 3. **No Warranty:** This software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
 4. **Limitation of Liability:** In no event shall the authors, contributors, or copyright holders be liable for any claim, damages, financial loss, or other liability, whether in an action of contract, tort or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
 
-**You are solely responsible for your own trading decisions and any financial losses that may result from using this bot.** We strongly recommend using the built-in **Demo Mode** extensively before ever considering connecting a Live API token.
+**You are solely responsible for your own financial decisions, security keys, API tokens, and any direct or indirect losses resulting from the use of this framework.** We highly advise utilizing the built-in `Demo Mode` extensively before transitioning to a production environment with real capital.
 
----
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Please consult the accompanying [LICENSE](LICENSE) file for further legal stipulations.
