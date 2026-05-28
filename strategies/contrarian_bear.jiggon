@@ -1,0 +1,5 @@
+# Jiggon Algorithm: Contrarian Bear
+# Attempts to short-sell against a strong bullish trend when momentum begins to fail.
+# It looks for heavily overbought conditions where the MACD is crossing downwards despite the trend.
+
+IF EMA_TREND == BULLISH AND RSI > 80 AND MACD < 0 THEN SELL

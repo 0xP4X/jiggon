@@ -1,0 +1,6 @@
+# Jiggon Algorithm: Whipsaw Catcher
+# Operates specifically when the market is ranging (EMA_TREND is MIXED).
+# Buys the bottom of the range and sells the top of the range.
+
+IF EMA_TREND == MIXED AND RSI < 30 AND MACD > 0 THEN BUY
+IF EMA_TREND == MIXED AND RSI > 70 AND MACD < 0 THEN SELL

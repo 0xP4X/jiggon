@@ -1,0 +1,7 @@
+# Jiggon Algorithm: Safe Harbor
+# A highly conservative algorithm that only trades in low-volatility environments.
+# It ensures the ATR is low (stable market), the trend is defined, and momentum is positive
+# but not overbought.
+
+IF ATR < 1.0 AND MACD > 0.1 AND RSI < 60 AND EMA_TREND == BULLISH THEN BUY
+IF ATR < 1.0 AND MACD < -0.1 AND RSI > 40 AND EMA_TREND == BEARISH THEN SELL

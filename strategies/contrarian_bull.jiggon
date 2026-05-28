@@ -1,0 +1,6 @@
+# Jiggon Algorithm: Contrarian Bull
+# Attempts to catch the absolute bottom of a crashing market.
+# It waits for the long-term trend to be heavily bearish, the asset to be severely oversold,
+# and for the MACD momentum to finally tick positive.
+
+IF EMA_TREND == BEARISH AND RSI < 20 AND MACD > 0 THEN BUY

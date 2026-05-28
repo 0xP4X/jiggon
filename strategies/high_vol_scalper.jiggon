@@ -1,0 +1,6 @@
+# Jiggon Algorithm: High Volatility Scalper
+# Looks for explosive, volatile market conditions. 
+# Only triggers when ATR is heavily elevated, attempting to catch massive candles.
+
+IF ATR > 2.0 AND RSI > 60 AND EMA_TREND == BULLISH THEN BUY
+IF ATR > 2.0 AND RSI < 40 AND EMA_TREND == BEARISH THEN SELL
