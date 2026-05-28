@@ -1,0 +1,7 @@
+# Jiggon Algorithm: Momentum Scalper
+# A highly aggressive algorithm that buys into rapid volatility spikes.
+# It requires the market trend to be heavily defined, and RSI to be pushing extremes
+# without waiting for a reversal.
+
+IF RSI > 60 AND MACD > 0.5 AND EMA_TREND == BULLISH THEN BUY
+IF RSI < 40 AND MACD < -0.5 AND EMA_TREND == BEARISH THEN SELL

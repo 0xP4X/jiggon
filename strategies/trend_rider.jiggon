@@ -1,0 +1,6 @@
+# Jiggon Algorithm: Trend Rider
+# Focuses heavily on aligning with the overall Moving Average trend
+# and waits for MACD momentum to cross the zero line in the direction of the trend.
+
+IF RSI < 70 AND MACD > 0 AND EMA_TREND == BULLISH THEN BUY
+IF RSI > 30 AND MACD < 0 AND EMA_TREND == BEARISH THEN SELL

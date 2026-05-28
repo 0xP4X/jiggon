@@ -1,0 +1,7 @@
+# Jiggon Algorithm: Mean Reversion
+# Designed to fade extreme market moves.
+# It buys when the asset is heavily oversold and sells when heavily overbought,
+# regardless of the long-term moving average trend.
+
+IF RSI < 25 AND ATR > 0.5 THEN BUY
+IF RSI > 75 AND ATR > 0.5 THEN SELL
