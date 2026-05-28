@@ -1,0 +1,501 @@
+{
+  "summary": {
+    "verdict": "fail",
+    "reasons": [
+      "no out-of-sample trades",
+      "expectancy below target",
+      "profit factor below target",
+      "too few folds passed"
+    ],
+    "folds": 20,
+    "pass_rate": 0.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "expectancy": 0,
+    "profit_factor": 0,
+    "max_drawdown": 0,
+    "max_loss_streak": 0
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_start": 0,
+      "train_end": 3000,
+      "test_start": 3000,
+      "test_end": 3720,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 380,
+        "RSI neutral zone": 119
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 2,
+      "train_start": 720,
+      "train_end": 3720,
+      "test_start": 3720,
+      "test_end": 4440,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 369,
+        "RSI neutral zone": 130
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 3,
+      "train_start": 1440,
+      "train_end": 4440,
+      "test_start": 4440,
+      "test_end": 5160,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "RSI neutral zone": 124,
+        "session blocked": 375
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 4,
+      "train_start": 2160,
+      "train_end": 5160,
+      "test_start": 5160,
+      "test_end": 5880,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 394,
+        "RSI neutral zone": 105
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 5,
+      "train_start": 2880,
+      "train_end": 5880,
+      "test_start": 5880,
+      "test_end": 6600,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 393,
+        "RSI neutral zone": 106
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 6,
+      "train_start": 3600,
+      "train_end": 6600,
+      "test_start": 6600,
+      "test_end": 7320,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 373,
+        "RSI neutral zone": 126
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 7,
+      "train_start": 4320,
+      "train_end": 7320,
+      "test_start": 7320,
+      "test_end": 8040,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 381,
+        "RSI neutral zone": 118
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 8,
+      "train_start": 5040,
+      "train_end": 8040,
+      "test_start": 8040,
+      "test_end": 8760,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 372,
+        "RSI neutral zone": 127
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 9,
+      "train_start": 5760,
+      "train_end": 8760,
+      "test_start": 8760,
+      "test_end": 9480,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 404,
+        "RSI neutral zone": 95
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 10,
+      "train_start": 6480,
+      "train_end": 9480,
+      "test_start": 9480,
+      "test_end": 10200,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 385,
+        "RSI neutral zone": 114
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 11,
+      "train_start": 7200,
+      "train_end": 10200,
+      "test_start": 10200,
+      "test_end": 10920,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 392,
+        "RSI neutral zone": 107
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 12,
+      "train_start": 7920,
+      "train_end": 10920,
+      "test_start": 10920,
+      "test_end": 11640,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "RSI neutral zone": 118,
+        "session blocked": 381
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 13,
+      "train_start": 8640,
+      "train_end": 11640,
+      "test_start": 11640,
+      "test_end": 12360,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "RSI neutral zone": 123,
+        "session blocked": 376
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 14,
+      "train_start": 9360,
+      "train_end": 12360,
+      "test_start": 12360,
+      "test_end": 13080,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "RSI neutral zone": 85,
+        "session blocked": 414
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 15,
+      "train_start": 10080,
+      "train_end": 13080,
+      "test_start": 13080,
+      "test_end": 13800,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 373,
+        "RSI neutral zone": 126
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 16,
+      "train_start": 10800,
+      "train_end": 13800,
+      "test_start": 13800,
+      "test_end": 14520,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 379,
+        "RSI neutral zone": 120
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 17,
+      "train_start": 11520,
+      "train_end": 14520,
+      "test_start": 14520,
+      "test_end": 15240,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "RSI neutral zone": 116,
+        "session blocked": 383
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 18,
+      "train_start": 12240,
+      "train_end": 15240,
+      "test_start": 15240,
+      "test_end": 15960,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 397,
+        "RSI neutral zone": 102
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 19,
+      "train_start": 12960,
+      "train_end": 15960,
+      "test_start": 15960,
+      "test_end": 16680,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 392,
+        "RSI neutral zone": 107
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 20,
+      "train_start": 13680,
+      "train_end": 16680,
+      "test_start": 16680,
+      "test_end": 17400,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "RSI neutral zone": 132,
+        "session blocked": 367
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    }
+  ]
+}

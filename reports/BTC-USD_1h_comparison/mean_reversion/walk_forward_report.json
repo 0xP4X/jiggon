@@ -1,0 +1,608 @@
+{
+  "summary": {
+    "verdict": "fail",
+    "reasons": [
+      "expectancy below target",
+      "profit factor below target",
+      "too few folds passed"
+    ],
+    "folds": 20,
+    "pass_rate": 0.1,
+    "total_trades": 75,
+    "win_rate": 0.5066666666666667,
+    "expectancy": -1.006266666666666,
+    "profit_factor": 0.8007182276676085,
+    "max_drawdown": 0.09796671024645352,
+    "max_loss_streak": 3
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_start": 0,
+      "train_end": 3000,
+      "test_start": 3000,
+      "test_end": 3720,
+      "starting_balance": 1000,
+      "ending_balance": 995.44,
+      "rejected_signals": 495,
+      "rejection_reasons": {
+        "session blocked": 415,
+        "RSI not extreme": 61,
+        "RSI overbought": 16,
+        "mean reversion": 19,
+        "volatility normal": 19,
+        "session approved": 19,
+        "threshold 95": 19,
+        "RSI oversold": 3
+      },
+      "metrics": {
+        "total_trades": 4,
+        "win_rate": 0.5,
+        "average_profit": 7.93,
+        "average_loss": 10.21,
+        "expectancy": -1.1400000000000006,
+        "drawdown": 0.020101195046561493,
+        "profit_factor": 0.7766895200783545,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 2,
+      "train_start": 720,
+      "train_end": 3720,
+      "test_start": 3720,
+      "test_end": 4440,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 478,
+        "RSI not extreme": 18,
+        "RSI oversold": 1,
+        "mean reversion": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 95": 2,
+        "RSI overbought": 1
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 3,
+      "train_start": 1440,
+      "train_end": 4440,
+      "test_start": 4440,
+      "test_end": 5160,
+      "starting_balance": 1000,
+      "ending_balance": 997.72,
+      "rejected_signals": 497,
+      "rejection_reasons": {
+        "session blocked": 436,
+        "RSI not extreme": 51,
+        "RSI overbought": 7,
+        "mean reversion": 10,
+        "volatility normal": 10,
+        "session approved": 10,
+        "threshold 90": 10,
+        "RSI oversold": 3
+      },
+      "metrics": {
+        "total_trades": 2,
+        "win_rate": 0.5,
+        "average_profit": 7.9,
+        "average_loss": 10.18,
+        "expectancy": -1.1399999999999997,
+        "drawdown": 0.010100208354003324,
+        "profit_factor": 0.7760314341846759,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 4,
+      "train_start": 2160,
+      "train_end": 5160,
+      "test_start": 5160,
+      "test_end": 5880,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 457,
+        "RSI not extreme": 28,
+        "RSI oversold": 8,
+        "mean reversion": 13,
+        "volatility normal": 13,
+        "session approved": 13,
+        "threshold 95": 13,
+        "RSI overbought": 5
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 5,
+      "train_start": 2880,
+      "train_end": 5880,
+      "test_start": 5880,
+      "test_end": 6600,
+      "starting_balance": 1000,
+      "ending_balance": 997.72,
+      "rejected_signals": 497,
+      "rejection_reasons": {
+        "session blocked": 415,
+        "RSI not extreme": 65,
+        "RSI oversold": 9,
+        "mean reversion": 17,
+        "volatility normal": 17,
+        "session approved": 17,
+        "threshold 90": 17,
+        "RSI overbought": 8
+      },
+      "metrics": {
+        "total_trades": 2,
+        "win_rate": 0.5,
+        "average_profit": 7.9,
+        "average_loss": 10.18,
+        "expectancy": -1.1399999999999997,
+        "drawdown": 0.010100208354003324,
+        "profit_factor": 0.7760314341846759,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 6,
+      "train_start": 3600,
+      "train_end": 6600,
+      "test_start": 6600,
+      "test_end": 7320,
+      "starting_balance": 1000,
+      "ending_balance": 1007.68,
+      "rejected_signals": 482,
+      "rejection_reasons": {
+        "session blocked": 411,
+        "RSI not extreme": 71
+      },
+      "metrics": {
+        "total_trades": 17,
+        "win_rate": 0.5882352941176471,
+        "average_profit": 7.981,
+        "average_loss": 10.304285714285713,
+        "expectancy": 0.4517647058823533,
+        "drawdown": 0.020090631503199303,
+        "profit_factor": 1.1064744211839734,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 7,
+      "train_start": 4320,
+      "train_end": 7320,
+      "test_start": 7320,
+      "test_end": 8040,
+      "starting_balance": 1000,
+      "ending_balance": 1002.07,
+      "rejected_signals": 485,
+      "rejection_reasons": {
+        "session blocked": 416,
+        "RSI not extreme": 52,
+        "RSI oversold": 5,
+        "mean reversion": 17,
+        "volatility normal": 17,
+        "session approved": 17,
+        "threshold 100": 17,
+        "RSI overbought": 12
+      },
+      "metrics": {
+        "total_trades": 14,
+        "win_rate": 0.5714285714285714,
+        "average_profit": 8.0,
+        "average_loss": 10.321666666666667,
+        "expectancy": 0.14785714285714224,
+        "drawdown": 0.03219045779408928,
+        "profit_factor": 1.033424834490554,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 8,
+      "train_start": 5040,
+      "train_end": 8040,
+      "test_start": 8040,
+      "test_end": 8760,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 416,
+        "RSI not extreme": 60,
+        "RSI overbought": 16,
+        "mean reversion": 22,
+        "volatility normal": 22,
+        "session approved": 22,
+        "threshold 95": 22,
+        "RSI oversold": 6
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 9,
+      "train_start": 5760,
+      "train_end": 8760,
+      "test_start": 8760,
+      "test_end": 9480,
+      "starting_balance": 1000,
+      "ending_balance": 1030.72,
+      "rejected_signals": 486,
+      "rejection_reasons": {
+        "session blocked": 437,
+        "RSI not extreme": 49
+      },
+      "metrics": {
+        "total_trades": 13,
+        "win_rate": 0.6923076923076923,
+        "average_profit": 8.02888888888889,
+        "average_loss": 10.385,
+        "expectancy": 2.3630769230769233,
+        "drawdown": 0.006802983291256283,
+        "profit_factor": 1.7395281656234955,
+        "max_loss_streak": 3
+      }
+    },
+    {
+      "fold": 10,
+      "train_start": 6480,
+      "train_end": 9480,
+      "test_start": 9480,
+      "test_end": 10200,
+      "starting_balance": 1000,
+      "ending_balance": 1001.02,
+      "rejected_signals": 492,
+      "rejection_reasons": {
+        "session blocked": 344,
+        "RSI not extreme": 119,
+        "RSI overbought": 16,
+        "mean reversion": 29,
+        "volatility normal": 29,
+        "session approved": 29,
+        "threshold 90": 29,
+        "RSI oversold": 13
+      },
+      "metrics": {
+        "total_trades": 7,
+        "win_rate": 0.5714285714285714,
+        "average_profit": 7.9525,
+        "average_loss": 10.263333333333334,
+        "expectancy": 0.14571428571428502,
+        "drawdown": 0.022336383791227578,
+        "profit_factor": 1.0331276388437804,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 11,
+      "train_start": 7200,
+      "train_end": 10200,
+      "test_start": 10200,
+      "test_end": 10920,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "RSI not extreme": 128,
+        "session blocked": 314,
+        "RSI overbought": 26,
+        "mean reversion": 56,
+        "volatility normal": 56,
+        "session approved": 56,
+        "threshold 95": 56,
+        "RSI oversold": 30
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 12,
+      "train_start": 7920,
+      "train_end": 10920,
+      "test_start": 10920,
+      "test_end": 11640,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "RSI not extreme": 128,
+        "session blocked": 332,
+        "RSI oversold": 17,
+        "mean reversion": 38,
+        "volatility normal": 38,
+        "session approved": 38,
+        "threshold 95": 38,
+        "RSI overbought": 21
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 13,
+      "train_start": 8640,
+      "train_end": 11640,
+      "test_start": 11640,
+      "test_end": 12360,
+      "starting_balance": 1000,
+      "ending_balance": 997.72,
+      "rejected_signals": 497,
+      "rejection_reasons": {
+        "RSI not extreme": 123,
+        "session blocked": 333,
+        "RSI overbought": 14,
+        "mean reversion": 41,
+        "volatility normal": 41,
+        "session approved": 41,
+        "threshold 90": 41,
+        "RSI oversold": 27
+      },
+      "metrics": {
+        "total_trades": 2,
+        "win_rate": 0.5,
+        "average_profit": 7.9,
+        "average_loss": 10.18,
+        "expectancy": -1.1399999999999997,
+        "drawdown": 0.010100208354003324,
+        "profit_factor": 0.7760314341846759,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 14,
+      "train_start": 9360,
+      "train_end": 12360,
+      "test_start": 12360,
+      "test_end": 13080,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 290,
+        "RSI not extreme": 146,
+        "RSI oversold": 39,
+        "mean reversion": 62,
+        "volatility normal": 62,
+        "session approved": 62,
+        "threshold 95": 62,
+        "RSI overbought": 23
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 15,
+      "train_start": 10080,
+      "train_end": 13080,
+      "test_start": 13080,
+      "test_end": 13800,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 333,
+        "RSI not extreme": 123,
+        "RSI oversold": 26,
+        "mean reversion": 42,
+        "volatility normal": 42,
+        "session approved": 42,
+        "threshold 95": 42,
+        "RSI overbought": 16
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 16,
+      "train_start": 10800,
+      "train_end": 13800,
+      "test_start": 13800,
+      "test_end": 14520,
+      "starting_balance": 1000,
+      "ending_balance": 997.72,
+      "rejected_signals": 497,
+      "rejection_reasons": {
+        "session blocked": 395,
+        "RSI not extreme": 79,
+        "RSI overbought": 11,
+        "mean reversion": 23,
+        "volatility normal": 23,
+        "session approved": 23,
+        "threshold 90": 23,
+        "RSI oversold": 12
+      },
+      "metrics": {
+        "total_trades": 2,
+        "win_rate": 0.5,
+        "average_profit": 7.9,
+        "average_loss": 10.18,
+        "expectancy": -1.1399999999999997,
+        "drawdown": 0.010100208354003324,
+        "profit_factor": 0.7760314341846759,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 17,
+      "train_start": 11520,
+      "train_end": 14520,
+      "test_start": 14520,
+      "test_end": 15240,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 395,
+        "RSI not extreme": 84,
+        "RSI overbought": 9,
+        "mean reversion": 19,
+        "volatility normal": 19,
+        "session approved": 19,
+        "threshold 95": 19,
+        "RSI oversold": 10
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 18,
+      "train_start": 12240,
+      "train_end": 15240,
+      "test_start": 15240,
+      "test_end": 15960,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "session blocked": 374,
+        "RSI not extreme": 92,
+        "RSI overbought": 13,
+        "mean reversion": 32,
+        "volatility normal": 32,
+        "session approved": 32,
+        "threshold 95": 32,
+        "RSI oversold": 19
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 19,
+      "train_start": 12960,
+      "train_end": 15960,
+      "test_start": 15960,
+      "test_end": 16680,
+      "starting_balance": 1000,
+      "ending_balance": 997.72,
+      "rejected_signals": 497,
+      "rejection_reasons": {
+        "session blocked": 377,
+        "RSI not extreme": 91,
+        "RSI oversold": 10,
+        "mean reversion": 29,
+        "volatility normal": 29,
+        "session approved": 29,
+        "threshold 90": 29,
+        "RSI overbought": 19
+      },
+      "metrics": {
+        "total_trades": 2,
+        "win_rate": 0.5,
+        "average_profit": 7.9,
+        "average_loss": 10.18,
+        "expectancy": -1.1399999999999997,
+        "drawdown": 0.010100208354003324,
+        "profit_factor": 0.7760314341846759,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 20,
+      "train_start": 13680,
+      "train_end": 16680,
+      "test_start": 16680,
+      "test_end": 17400,
+      "starting_balance": 1000,
+      "ending_balance": 989.9,
+      "rejected_signals": 498,
+      "rejection_reasons": {
+        "RSI not extreme": 109,
+        "session blocked": 353,
+        "RSI overbought": 13,
+        "mean reversion": 36,
+        "volatility normal": 36,
+        "session approved": 36,
+        "threshold 95": 36,
+        "RSI oversold": 23
+      },
+      "metrics": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "average_profit": 0,
+        "average_loss": 10.1,
+        "expectancy": -10.1,
+        "drawdown": 0.010100000000000022,
+        "profit_factor": 0.0,
+        "max_loss_streak": 1
+      }
+    }
+  ]
+}

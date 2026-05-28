@@ -1,0 +1,10 @@
+# Jiggon Custom Algorithm
+# -----------------------
+# You can write your own trading rules here in plain English.
+# No coding required!
+#
+# Available Variables: RSI, MACD, ATR, EMA_TREND == BULLISH/BEARISH/MIXED
+# Actions: BUY, SELL
+
+IF RSI < 45 AND EMA_TREND == BULLISH THEN BUY
+IF RSI > 55 AND EMA_TREND == BEARISH THEN SELL

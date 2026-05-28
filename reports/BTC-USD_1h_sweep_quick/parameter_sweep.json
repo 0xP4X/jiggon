@@ -1,0 +1,277 @@
+[
+  {
+    "name": "strategy_name=channel_breakout,base_confidence_threshold=75,session_minimum_winrate=0.52,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "channel_breakout",
+      "base_confidence_threshold": 75,
+      "session_minimum_winrate": 0.52,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.15,
+    "total_trades": 206,
+    "win_rate": 0.48058252427184467,
+    "expectancy": -1.188349514563106,
+    "profit_factor": 0.7092429389267644,
+    "max_drawdown": 0.24479999999999996,
+    "max_loss_streak": 9,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=mean_reversion,base_confidence_threshold=80,session_minimum_winrate=0.52,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "mean_reversion",
+      "base_confidence_threshold": 80,
+      "session_minimum_winrate": 0.52,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.1,
+    "total_trades": 75,
+    "win_rate": 0.5066666666666667,
+    "expectancy": -1.006266666666666,
+    "profit_factor": 0.8007182276676085,
+    "max_drawdown": 0.09796671024645352,
+    "max_loss_streak": 3,
+    "overfit_warnings": [
+      "weak fold consistency"
+    ]
+  },
+  {
+    "name": "strategy_name=mean_reversion,base_confidence_threshold=75,session_minimum_winrate=0.52,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "mean_reversion",
+      "base_confidence_threshold": 75,
+      "session_minimum_winrate": 0.52,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.1,
+    "total_trades": 96,
+    "win_rate": 0.4895833333333333,
+    "expectancy": -1.2403125,
+    "profit_factor": 0.7547072638127807,
+    "max_drawdown": 0.13282342055007587,
+    "max_loss_streak": 4,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=channel_breakout,base_confidence_threshold=80,session_minimum_winrate=0.5,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "channel_breakout",
+      "base_confidence_threshold": 80,
+      "session_minimum_winrate": 0.5,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.1,
+    "total_trades": 282,
+    "win_rate": 0.46099290780141844,
+    "expectancy": -1.2394326241134759,
+    "profit_factor": 0.67232295201845,
+    "max_drawdown": 0.34952,
+    "max_loss_streak": 8,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=channel_breakout,base_confidence_threshold=75,session_minimum_winrate=0.5,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "channel_breakout",
+      "base_confidence_threshold": 75,
+      "session_minimum_winrate": 0.5,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.1,
+    "total_trades": 287,
+    "win_rate": 0.4564459930313589,
+    "expectancy": -1.3199651567944248,
+    "profit_factor": 0.6529335238932864,
+    "max_drawdown": 0.37883000000000006,
+    "max_loss_streak": 9,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=mean_reversion,base_confidence_threshold=80,session_minimum_winrate=0.5,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "mean_reversion",
+      "base_confidence_threshold": 80,
+      "session_minimum_winrate": 0.5,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 102,
+    "win_rate": 0.5294117647058824,
+    "expectancy": -0.587843137254902,
+    "profit_factor": 0.8787731748246093,
+    "max_drawdown": 0.11604682871785235,
+    "max_loss_streak": 7,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=mean_reversion,base_confidence_threshold=75,session_minimum_winrate=0.5,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "mean_reversion",
+      "base_confidence_threshold": 75,
+      "session_minimum_winrate": 0.5,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 116,
+    "win_rate": 0.5258620689655172,
+    "expectancy": -0.7559482758620693,
+    "profit_factor": 0.8449693262380001,
+    "max_drawdown": 0.12904303662122435,
+    "max_loss_streak": 7,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=trend_following,base_confidence_threshold=80,session_minimum_winrate=0.5,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "trend_following",
+      "base_confidence_threshold": 80,
+      "session_minimum_winrate": 0.5,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 672,
+    "win_rate": 0.5029761904761905,
+    "expectancy": -0.8244642857142863,
+    "profit_factor": 0.7409672351885098,
+    "max_drawdown": 0.5644453994081396,
+    "max_loss_streak": 8,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=trend_following,base_confidence_threshold=75,session_minimum_winrate=0.5,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "trend_following",
+      "base_confidence_threshold": 75,
+      "session_minimum_winrate": 0.5,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 670,
+    "win_rate": 0.49850746268656715,
+    "expectancy": -0.9004029850746269,
+    "profit_factor": 0.7175503897745629,
+    "max_drawdown": 0.6125267362704978,
+    "max_loss_streak": 8,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=trend_following,base_confidence_threshold=75,session_minimum_winrate=0.52,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "trend_following",
+      "base_confidence_threshold": 75,
+      "session_minimum_winrate": 0.52,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 498,
+    "win_rate": 0.4799196787148594,
+    "expectancy": -1.009317269076305,
+    "profit_factor": 0.6946164174661134,
+    "max_drawdown": 0.5065383470582399,
+    "max_loss_streak": 10,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=trend_following,base_confidence_threshold=80,session_minimum_winrate=0.52,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "trend_following",
+      "base_confidence_threshold": 80,
+      "session_minimum_winrate": 0.52,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 500,
+    "win_rate": 0.48,
+    "expectancy": -0.9879199999999999,
+    "profit_factor": 0.6919699927039618,
+    "max_drawdown": 0.4979263815854747,
+    "max_loss_streak": 10,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  },
+  {
+    "name": "strategy_name=channel_breakout,base_confidence_threshold=80,session_minimum_winrate=0.52,mean_reversion_oversold=30,mean_reversion_overbought=70,channel_period=20",
+    "parameters": {
+      "strategy_name": "channel_breakout",
+      "base_confidence_threshold": 80,
+      "session_minimum_winrate": 0.52,
+      "mean_reversion_oversold": 30,
+      "mean_reversion_overbought": 70,
+      "channel_period": 20
+    },
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 194,
+    "win_rate": 0.4742268041237113,
+    "expectancy": -1.3960824742268039,
+    "profit_factor": 0.661674140881666,
+    "max_drawdown": 0.27084,
+    "max_loss_streak": 9,
+    "overfit_warnings": [
+      "weak fold consistency",
+      "drawdown too high"
+    ]
+  }
+]

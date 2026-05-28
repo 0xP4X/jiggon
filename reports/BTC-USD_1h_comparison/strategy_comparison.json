@@ -1,0 +1,52 @@
+[
+  {
+    "strategy_name": "trend_following",
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 500,
+    "win_rate": 0.48,
+    "expectancy": -0.9879199999999999,
+    "profit_factor": 0.6919699927039618,
+    "max_drawdown": 0.4979263815854747,
+    "max_loss_streak": 10,
+    "reasons": [
+      "expectancy below target",
+      "profit factor below target",
+      "drawdown above limit",
+      "too few folds passed"
+    ]
+  },
+  {
+    "strategy_name": "mean_reversion",
+    "verdict": "fail",
+    "pass_rate": 0.1,
+    "total_trades": 75,
+    "win_rate": 0.5066666666666667,
+    "expectancy": -1.006266666666666,
+    "profit_factor": 0.8007182276676085,
+    "max_drawdown": 0.09796671024645352,
+    "max_loss_streak": 3,
+    "reasons": [
+      "expectancy below target",
+      "profit factor below target",
+      "too few folds passed"
+    ]
+  },
+  {
+    "strategy_name": "channel_breakout",
+    "verdict": "fail",
+    "pass_rate": 0.05,
+    "total_trades": 194,
+    "win_rate": 0.4742268041237113,
+    "expectancy": -1.3960824742268039,
+    "profit_factor": 0.661674140881666,
+    "max_drawdown": 0.27084,
+    "max_loss_streak": 9,
+    "reasons": [
+      "expectancy below target",
+      "profit factor below target",
+      "drawdown above limit",
+      "too few folds passed"
+    ]
+  }
+]

@@ -1,0 +1,594 @@
+{
+  "summary": {
+    "verdict": "fail",
+    "reasons": [
+      "expectancy below target",
+      "profit factor below target",
+      "drawdown above limit",
+      "too few folds passed"
+    ],
+    "folds": 20,
+    "pass_rate": 0.05,
+    "total_trades": 194,
+    "win_rate": 0.4742268041237113,
+    "expectancy": -1.3960824742268039,
+    "profit_factor": 0.661674140881666,
+    "max_drawdown": 0.27084,
+    "max_loss_streak": 9
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_start": 0,
+      "train_end": 3000,
+      "test_start": 3000,
+      "test_end": 3720,
+      "starting_balance": 1000,
+      "ending_balance": 967.48,
+      "rejected_signals": 490,
+      "rejection_reasons": {
+        "session blocked": 415,
+        "no channel breakout": 73,
+        "channel breakout high": 2,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 95": 1,
+        "threshold 100": 1
+      },
+      "metrics": {
+        "total_trades": 9,
+        "win_rate": 0.2222222222222222,
+        "average_profit": 3.855,
+        "average_loss": 5.747142857142856,
+        "expectancy": -3.6133333333333333,
+        "drawdown": 0.03251999999999998,
+        "profit_factor": 0.19164802386278898,
+        "max_loss_streak": 5
+      }
+    },
+    {
+      "fold": 2,
+      "train_start": 720,
+      "train_end": 3720,
+      "test_start": 3720,
+      "test_end": 4440,
+      "starting_balance": 1000,
+      "ending_balance": 1000,
+      "rejected_signals": 499,
+      "rejection_reasons": {
+        "session blocked": 478,
+        "no channel breakout": 21
+      },
+      "metrics": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "average_profit": 0,
+        "average_loss": 0,
+        "expectancy": 0,
+        "drawdown": 0,
+        "profit_factor": 0,
+        "max_loss_streak": 0
+      }
+    },
+    {
+      "fold": 3,
+      "train_start": 1440,
+      "train_end": 4440,
+      "test_start": 4440,
+      "test_end": 5160,
+      "starting_balance": 1000,
+      "ending_balance": 978.63,
+      "rejected_signals": 494,
+      "rejection_reasons": {
+        "session blocked": 436,
+        "no channel breakout": 56,
+        "channel breakout high": 2,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 100": 2
+      },
+      "metrics": {
+        "total_trades": 5,
+        "win_rate": 0.2,
+        "average_profit": 3.8,
+        "average_loss": 6.2924999999999995,
+        "expectancy": -4.274,
+        "drawdown": 0.021370000000000004,
+        "profit_factor": 0.15097338100913787,
+        "max_loss_streak": 4
+      }
+    },
+    {
+      "fold": 4,
+      "train_start": 2160,
+      "train_end": 5160,
+      "test_start": 5160,
+      "test_end": 5880,
+      "starting_balance": 1000,
+      "ending_balance": 983.65,
+      "rejected_signals": 495,
+      "rejection_reasons": {
+        "session blocked": 457,
+        "no channel breakout": 36,
+        "channel breakout low": 2,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 95": 2
+      },
+      "metrics": {
+        "total_trades": 4,
+        "win_rate": 0.25,
+        "average_profit": 3.84,
+        "average_loss": 6.7299999999999995,
+        "expectancy": -4.0874999999999995,
+        "drawdown": 0.016350000000000024,
+        "profit_factor": 0.19019316493313523,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 5,
+      "train_start": 2880,
+      "train_end": 5880,
+      "test_start": 5880,
+      "test_end": 6600,
+      "starting_balance": 1000,
+      "ending_balance": 977.47,
+      "rejected_signals": 488,
+      "rejection_reasons": {
+        "session blocked": 415,
+        "no channel breakout": 71,
+        "channel breakout high": 1,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 100": 2,
+        "channel breakout low": 1
+      },
+      "metrics": {
+        "total_trades": 11,
+        "win_rate": 0.36363636363636365,
+        "average_profit": 3.855,
+        "average_loss": 5.421428571428572,
+        "expectancy": -2.0481818181818183,
+        "drawdown": 0.030191487250719268,
+        "profit_factor": 0.40632411067193674,
+        "max_loss_streak": 4
+      }
+    },
+    {
+      "fold": 6,
+      "train_start": 3600,
+      "train_end": 6600,
+      "test_start": 6600,
+      "test_end": 7320,
+      "starting_balance": 1000,
+      "ending_balance": 984.96,
+      "rejected_signals": 482,
+      "rejection_reasons": {
+        "session blocked": 413,
+        "no channel breakout": 67,
+        "channel breakout low": 2,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 95": 2
+      },
+      "metrics": {
+        "total_trades": 17,
+        "win_rate": 0.5294117647058824,
+        "average_profit": 5.6466666666666665,
+        "average_loss": 8.2325,
+        "expectancy": -0.8847058823529412,
+        "drawdown": 0.02433805830435939,
+        "profit_factor": 0.7716368053446705,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 7,
+      "train_start": 4320,
+      "train_end": 7320,
+      "test_start": 7320,
+      "test_end": 8040,
+      "starting_balance": 1000,
+      "ending_balance": 988.92,
+      "rejected_signals": 489,
+      "rejection_reasons": {
+        "session blocked": 416,
+        "no channel breakout": 73
+      },
+      "metrics": {
+        "total_trades": 10,
+        "win_rate": 0.5,
+        "average_profit": 3.84,
+        "average_loss": 6.056,
+        "expectancy": -1.108,
+        "drawdown": 0.011080000000000041,
+        "profit_factor": 0.6340819022457067,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 8,
+      "train_start": 5040,
+      "train_end": 8040,
+      "test_start": 8040,
+      "test_end": 8760,
+      "starting_balance": 1000,
+      "ending_balance": 990.36,
+      "rejected_signals": 494,
+      "rejection_reasons": {
+        "session blocked": 416,
+        "no channel breakout": 73,
+        "channel breakout high": 3,
+        "momentum confirmed": 5,
+        "volatility normal": 5,
+        "session approved": 5,
+        "threshold 95": 1,
+        "threshold 100": 4,
+        "channel breakout low": 2
+      },
+      "metrics": {
+        "total_trades": 5,
+        "win_rate": 0.4,
+        "average_profit": 7.93,
+        "average_loss": 8.5,
+        "expectancy": -1.9279999999999995,
+        "drawdown": 0.02510188411789026,
+        "profit_factor": 0.6219607843137255,
+        "max_loss_streak": 3
+      }
+    },
+    {
+      "fold": 9,
+      "train_start": 5760,
+      "train_end": 8760,
+      "test_start": 8760,
+      "test_end": 9480,
+      "starting_balance": 1000,
+      "ending_balance": 987.56,
+      "rejected_signals": 495,
+      "rejection_reasons": {
+        "session blocked": 437,
+        "no channel breakout": 58
+      },
+      "metrics": {
+        "total_trades": 4,
+        "win_rate": 0.5,
+        "average_profit": 3.87,
+        "average_loss": 10.09,
+        "expectancy": -3.11,
+        "drawdown": 0.012440000000000055,
+        "profit_factor": 0.38354806739345887,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 10,
+      "train_start": 6480,
+      "train_end": 9480,
+      "test_start": 9480,
+      "test_end": 10200,
+      "starting_balance": 1000,
+      "ending_balance": 976.75,
+      "rejected_signals": 487,
+      "rejection_reasons": {
+        "session blocked": 353,
+        "no channel breakout": 129,
+        "channel breakout high": 4,
+        "momentum confirmed": 5,
+        "volatility normal": 5,
+        "session approved": 5,
+        "threshold 100": 1,
+        "threshold 95": 1,
+        "channel breakout low": 1,
+        "threshold 90": 3
+      },
+      "metrics": {
+        "total_trades": 12,
+        "win_rate": 0.5,
+        "average_profit": 4.498333333333333,
+        "average_loss": 8.373333333333333,
+        "expectancy": -1.9375,
+        "drawdown": 0.02325,
+        "profit_factor": 0.5372213375796178,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 11,
+      "train_start": 7200,
+      "train_end": 10200,
+      "test_start": 10200,
+      "test_end": 10920,
+      "starting_balance": 1000,
+      "ending_balance": 998.45,
+      "rejected_signals": 480,
+      "rejection_reasons": {
+        "no channel breakout": 163,
+        "session blocked": 312,
+        "channel breakout low": 4,
+        "momentum confirmed": 5,
+        "volatility normal": 5,
+        "session approved": 5,
+        "threshold 95": 1,
+        "threshold 90": 4,
+        "channel breakout high": 1
+      },
+      "metrics": {
+        "total_trades": 19,
+        "win_rate": 0.5789473684210527,
+        "average_profit": 6.816363636363636,
+        "average_loss": 9.56625,
+        "expectancy": -0.08157894736842097,
+        "drawdown": 0.02037832852573535,
+        "profit_factor": 0.9797465046387038,
+        "max_loss_streak": 3
+      }
+    },
+    {
+      "fold": 12,
+      "train_start": 7920,
+      "train_end": 10920,
+      "test_start": 10920,
+      "test_end": 11640,
+      "starting_balance": 1000,
+      "ending_balance": 967.14,
+      "rejected_signals": 484,
+      "rejection_reasons": {
+        "no channel breakout": 150,
+        "session blocked": 332,
+        "channel breakout low": 2,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 100": 2
+      },
+      "metrics": {
+        "total_trades": 15,
+        "win_rate": 0.4,
+        "average_profit": 5.868333333333333,
+        "average_loss": 7.563333333333333,
+        "expectancy": -2.190666666666666,
+        "drawdown": 0.04571422933091265,
+        "profit_factor": 0.5172616424269135,
+        "max_loss_streak": 3
+      }
+    },
+    {
+      "fold": 13,
+      "train_start": 8640,
+      "train_end": 11640,
+      "test_start": 11640,
+      "test_end": 12360,
+      "starting_balance": 1000,
+      "ending_balance": 995.57,
+      "rejected_signals": 487,
+      "rejection_reasons": {
+        "no channel breakout": 148,
+        "session blocked": 333,
+        "channel breakout low": 5,
+        "momentum confirmed": 6,
+        "volatility normal": 6,
+        "session approved": 6,
+        "threshold 95": 4,
+        "threshold 100": 2,
+        "channel breakout high": 1
+      },
+      "metrics": {
+        "total_trades": 12,
+        "win_rate": 0.5833333333333334,
+        "average_profit": 4.414285714285714,
+        "average_loss": 7.066,
+        "expectancy": -0.3691666666666671,
+        "drawdown": 0.0062386456648899,
+        "profit_factor": 0.8746108123407869,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 14,
+      "train_start": 9360,
+      "train_end": 12360,
+      "test_start": 12360,
+      "test_end": 13080,
+      "starting_balance": 1000,
+      "ending_balance": 962.33,
+      "rejected_signals": 480,
+      "rejection_reasons": {
+        "session blocked": 287,
+        "no channel breakout": 176,
+        "channel breakout low": 3,
+        "momentum confirmed": 5,
+        "volatility normal": 5,
+        "session approved": 5,
+        "threshold 95": 3,
+        "channel breakout high": 2,
+        "threshold 90": 1,
+        "threshold 100": 1,
+        "safe mode active": 12
+      },
+      "metrics": {
+        "total_trades": 19,
+        "win_rate": 0.47368421052631576,
+        "average_profit": 4.757777777777778,
+        "average_loss": 8.049000000000001,
+        "expectancy": -1.9826315789473692,
+        "drawdown": 0.052694268895320195,
+        "profit_factor": 0.5319915517455583,
+        "max_loss_streak": 4
+      }
+    },
+    {
+      "fold": 15,
+      "train_start": 10080,
+      "train_end": 13080,
+      "test_start": 13080,
+      "test_end": 13800,
+      "starting_balance": 1000,
+      "ending_balance": 998.74,
+      "rejected_signals": 490,
+      "rejection_reasons": {
+        "session blocked": 333,
+        "no channel breakout": 156,
+        "channel breakout low": 1,
+        "momentum confirmed": 1,
+        "volatility normal": 1,
+        "session approved": 1,
+        "threshold 90": 1
+      },
+      "metrics": {
+        "total_trades": 9,
+        "win_rate": 0.5555555555555556,
+        "average_profit": 7.944,
+        "average_loss": 10.245000000000001,
+        "expectancy": -0.14000000000000057,
+        "drawdown": 0.024563185498442195,
+        "profit_factor": 0.9692532942898974,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 16,
+      "train_start": 10800,
+      "train_end": 13800,
+      "test_start": 13800,
+      "test_end": 14520,
+      "starting_balance": 1000,
+      "ending_balance": 994.79,
+      "rejected_signals": 490,
+      "rejection_reasons": {
+        "session blocked": 395,
+        "no channel breakout": 95
+      },
+      "metrics": {
+        "total_trades": 9,
+        "win_rate": 0.5555555555555556,
+        "average_profit": 7.114,
+        "average_loss": 10.195,
+        "expectancy": -0.5788888888888883,
+        "drawdown": 0.02232901887942136,
+        "profit_factor": 0.8722412947523296,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 17,
+      "train_start": 11520,
+      "train_end": 14520,
+      "test_start": 14520,
+      "test_end": 15240,
+      "starting_balance": 1000,
+      "ending_balance": 968.67,
+      "rejected_signals": 492,
+      "rejection_reasons": {
+        "session blocked": 395,
+        "no channel breakout": 92,
+        "channel breakout low": 3,
+        "momentum confirmed": 5,
+        "volatility normal": 5,
+        "session approved": 5,
+        "threshold 95": 2,
+        "channel breakout high": 2,
+        "threshold 100": 3
+      },
+      "metrics": {
+        "total_trades": 7,
+        "win_rate": 0.14285714285714285,
+        "average_profit": 3.82,
+        "average_loss": 5.858333333333333,
+        "expectancy": -4.475714285714286,
+        "drawdown": 0.03133000000000004,
+        "profit_factor": 0.10867709815078236,
+        "max_loss_streak": 3
+      }
+    },
+    {
+      "fold": 18,
+      "train_start": 12240,
+      "train_end": 15240,
+      "test_start": 15240,
+      "test_end": 15960,
+      "starting_balance": 1000,
+      "ending_balance": 1022.6,
+      "rejected_signals": 487,
+      "rejection_reasons": {
+        "session blocked": 374,
+        "no channel breakout": 113
+      },
+      "metrics": {
+        "total_trades": 12,
+        "win_rate": 0.6666666666666666,
+        "average_profit": 8.00875,
+        "average_loss": 10.3675,
+        "expectancy": 1.8833333333333324,
+        "drawdown": 0.02009448336000452,
+        "profit_factor": 1.5449722691102,
+        "max_loss_streak": 2
+      }
+    },
+    {
+      "fold": 19,
+      "train_start": 12960,
+      "train_end": 15960,
+      "test_start": 15960,
+      "test_end": 16680,
+      "starting_balance": 1000,
+      "ending_balance": 986.35,
+      "rejected_signals": 493,
+      "rejection_reasons": {
+        "session blocked": 377,
+        "no channel breakout": 114,
+        "channel breakout high": 1,
+        "momentum confirmed": 2,
+        "volatility normal": 2,
+        "session approved": 2,
+        "threshold 90": 2,
+        "channel breakout low": 1
+      },
+      "metrics": {
+        "total_trades": 6,
+        "win_rate": 0.5,
+        "average_profit": 3.86,
+        "average_loss": 8.41,
+        "expectancy": -2.2750000000000004,
+        "drawdown": 0.013649999999999978,
+        "profit_factor": 0.4589774078478002,
+        "max_loss_streak": 1
+      }
+    },
+    {
+      "fold": 20,
+      "train_start": 13680,
+      "train_end": 16680,
+      "test_start": 16680,
+      "test_end": 17400,
+      "starting_balance": 1000,
+      "ending_balance": 998.74,
+      "rejected_signals": 490,
+      "rejection_reasons": {
+        "no channel breakout": 136,
+        "session blocked": 353,
+        "channel breakout low": 1,
+        "momentum confirmed": 1,
+        "volatility normal": 1,
+        "session approved": 1,
+        "threshold 90": 1
+      },
+      "metrics": {
+        "total_trades": 9,
+        "win_rate": 0.5555555555555556,
+        "average_profit": 7.928,
+        "average_loss": 10.225,
+        "expectancy": -0.13999999999999968,
+        "drawdown": 0.016852715925422798,
+        "profit_factor": 0.9691931540342299,
+        "max_loss_streak": 1
+      }
+    }
+  ]
+}
