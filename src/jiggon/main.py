@@ -72,10 +72,14 @@ class CandlestickChart(PlotextPlot):
 class SplashScreen(Screen):
     def compose(self) -> ComposeResult:
         ascii_art = r"""
-   ___(_)__ _  __ _ ___  ___ 
-  / _ / / _ `// _ `/ _ \/ _ \
-  \___/_/\_, / \_, /\___/_//_/
-        /___/ /___/          
+      _   ___  _____  _____  _____  _   _ 
+     | | |_ _||  __ \|  __ \|  _  || \ | |
+     | |  | | | |  \/| |  \/| | | ||  \| |
+ _   | |  | | | | __ | | __ | | | || . ` |
+| |__| | _| |_| |_\ \| |_\ \\ \_/ /| |\  |
+ \____/  \___/ \____/ \____/ \___/ \_| \_/
+
+        Created by Prince Ofori (0xP4X)
         """
         yield Vertical(
             Label(ascii_art, id="splash_logo"),
@@ -88,6 +92,34 @@ class SplashScreen(Screen):
         
     def finish_splash(self) -> None:
         self.app.pop_screen()
+        
+        # Check for existing configuration to skip wizard
+        config_path = os.path.join(os.path.dirname(__file__), "..", "jiggon_config.json")
+        try:
+            if os.path.exists(config_path):
+                with open(config_path, "r") as f:
+                    cfg = json.load(f)
+                if cfg.get("api_token"):
+                    self.app.max_drawdown = float(cfg.get("drawdown", "5.0"))
+                    self.app.take_profit = float(cfg.get("take_profit", "0.0"))
+                    self.app.abnormal_atr = float(cfg.get("atr", "80.0"))
+                    self.app.stake_size = float(cfg.get("stake", "10.0"))
+                    self.app.duration = int(cfg.get("duration", "5"))
+                    self.app.symbol = cfg.get("symbol", "R_100")
+                    if not self.app.symbol.startswith("R_") and self.app.symbol.isdigit():
+                        self.app.symbol = f"R_{self.app.symbol}"
+                    self.app.aggression = cfg.get("aggression", "bal")
+                    self.app.chart_theme = cfg.get("chart_theme", "catppuccin")
+                    self.app.timeframe = int(cfg.get("timeframe", "60"))
+                    self.app.account_id = cfg.get("account_id", "")
+                    self.app.api_token = cfg.get("api_token", "")
+                    self.app.env_name = "Live" if self.app.api_token else "Demo"
+                    
+                    self.app.start_engine()
+                    return
+        except Exception:
+            pass
+            
         self.app.push_screen("wizard")
 
 class OnboardingWizard(Screen):
