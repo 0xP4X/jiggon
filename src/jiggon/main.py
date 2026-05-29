@@ -74,19 +74,21 @@ class CandlestickChart(PlotextPlot):
 
 class SplashScreen(Screen):
     def compose(self) -> ComposeResult:
-        ascii_art = r"""
-      _   ___  _____  _____  _____  _   _ 
-     | | |_ _||  __ \|  __ \|  _  || \ | |
-     | |  | | | |  \/| |  \/| | | ||  \| |
- _   | |  | | | | __ | | __ | | | || . ` |
-| |__| | _| |_| |_\ \| |_\ \\ \_/ /| |\  |
- \____/  \___/ \____/ \____/ \___/ \_| \_/
-
-        Created by Prince Ofori (0xP4X)
-        Version: v{__version__}
-        """
+        SPLASH_ART = f"""
+                                                                                
+                         _   ___  _____  _____  _____  _   _                    
+                        | | |_ _||  __ \|  __ \|  _  || \ | |                   
+                        | |  | | | |  \/| |  \/| | | ||  \| |                   
+                    _   | |  | | | | __ | | __ | | | || . ` |                   
+                   | |__| | _| |_| |_\ \| |_\ \\ \_/ /| |\  |                   
+                    \____/  \___/ \____/ \____/ \___/ \_| \_/                   
+                                                                                
+                            Created by Prince Ofori (0xP4X)                     
+                                Version: v{__version__}                         
+                                                                                
+"""
         yield Vertical(
-            Label(ascii_art, id="splash_logo"),
+            Label(SPLASH_ART, id="splash_logo"),
             Label("Initializing Quant Engine...", id="splash_text"),
             id="splash_container"
         )
@@ -98,7 +100,7 @@ class SplashScreen(Screen):
         self.app.pop_screen()
         
         # Check for existing configuration to skip wizard
-        config_path = os.path.join(os.path.dirname(__file__), "..", "jiggon_config.json")
+        config_path = os.path.join(os.path.expanduser("~"), ".jiggon_config.json")
         try:
             if os.path.exists(config_path):
                 with open(config_path, "r") as f:
@@ -238,7 +240,7 @@ class OnboardingWizard(Screen):
         )
 
     def on_mount(self) -> None:
-        config_path = os.path.join(os.path.dirname(__file__), "..", "jiggon_config.json")
+        config_path = os.path.join(os.path.expanduser("~"), ".jiggon_config.json")
         if os.path.exists(config_path):
             try:
                 with open(config_path, "r") as f:
@@ -323,7 +325,7 @@ class OnboardingWizard(Screen):
                 "app_id": getattr(self.app, "app_id", "36544")
             }
             try:
-                config_path = os.path.join(os.path.dirname(__file__), "..", "jiggon_config.json")
+                config_path = os.path.join(os.path.expanduser("~"), ".jiggon_config.json")
                 with open(config_path, "w") as f:
                     json.dump(cfg, f)
             except Exception:

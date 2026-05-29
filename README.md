@@ -20,6 +20,16 @@ The software is constructed to eliminate emotional trading variables by strictly
 
 ## System Architecture
 
+## 🔐 Authentication
+
+Jiggon requires a valid **Deriv API Token** with `Read` and `Trade` scopes.
+
+You can use two types of tokens:
+1. **Classic Tokens (Recommended)**: Generated via the [Deriv API Token Page](https://app.deriv.com/account/api-token). These are 15-character strings and work instantly.
+2. **Personal Access Tokens (PAT)**: Generated via the Developer Dashboard. If you use a `pat_...` token, **you must also provide the exact alphanumeric App ID** (e.g., `33oK...`) that the PAT was generated under. Deriv strictly ties PATs to their parent App IDs.
+
+During your first boot, Jiggon will prompt you for your Token and optional App ID, saving them securely to your home directory (`~/.jiggon_config.json`).
+
 The application is structured around a modular execution pipeline. Key components include:
 
 *   **[DerivWebSocket](src/jiggon/data/deriv_ws.py):** Establishes an asynchronous, persistent WebSocket connection to the Deriv API for real-time tick data ingestion.
