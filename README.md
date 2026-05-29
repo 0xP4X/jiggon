@@ -58,6 +58,14 @@ Jiggon is officially distributed via the Python Package Index (PyPI). Ensure you
 pip install jiggon
 ```
 
+### Updating Jiggon
+
+To ensure you have the latest features and bug fixes, run the following command to force an update directly from PyPI (bypassing the local cache):
+
+```powershell
+pip install jiggon --upgrade --no-cache-dir
+```
+
 ### Developer Setup (Building from Source)
 
 If you wish to contribute to the open-source repository or modify the source code:
