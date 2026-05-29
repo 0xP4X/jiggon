@@ -21,6 +21,9 @@ from jiggon.analysis.market import analyze_market
 from jiggon.strategy.confidence import calculate_confidence, is_trade_approved
 from jiggon.strategy.signals import evaluate_best_strategy
 from jiggon.risk.engine import RiskState, evaluate_risk, RiskDecision
+from typing import Optional
+
+from jiggon import __version__
 from jiggon.data.deriv_ws import DerivWebSocket
 from jiggon.execution.engine import validate_execution, TradeSignal
 from jiggon.ai.predictor import RuleBasedPredictor, Prediction
@@ -80,6 +83,7 @@ class SplashScreen(Screen):
  \____/  \___/ \____/ \____/ \___/ \_| \_/
 
         Created by Prince Ofori (0xP4X)
+        Version: v{__version__}
         """
         yield Vertical(
             Label(ascii_art, id="splash_logo"),
@@ -553,6 +557,7 @@ class JiggonTerminal(App):
         self.chart_zoom = 50
 
     def on_mount(self) -> None:
+        self.title = f"Jiggon Quant Terminal (v{__version__})"
         self.install_screen(SplashScreen(), name="splash")
         self.install_screen(OnboardingWizard(), name="wizard")
         self.install_screen(HelpScreen(), name="help")
