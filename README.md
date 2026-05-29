@@ -22,10 +22,10 @@ The software is constructed to eliminate emotional trading variables by strictly
 
 The application is structured around a modular execution pipeline. Key components include:
 
-*   **[DerivWebSocket](app/data/deriv_ws.py):** Establishes an asynchronous, persistent WebSocket connection to the Deriv API for real-time tick data ingestion.
-*   **[BrokerClient](app/broker/client.py):** Manages account authentication, balance verification, and live contract execution routing.
-*   **[MarketSnapshot](app/analysis/market.py):** Processes raw tick data into synthetically constructed OHLC (Open, High, Low, Close) candles to calculate critical technical indicators (EMA, RSI, ATR, MACD).
-*   **[ExecutionEngine](app/execution/engine.py):** The central decision matrix that cross-references technical signals with the `RiskState` to authorize or veto pending executions.
+*   **[DerivWebSocket](src/jiggon/data/deriv_ws.py):** Establishes an asynchronous, persistent WebSocket connection to the Deriv API for real-time tick data ingestion.
+*   **[BrokerClient](src/jiggon/broker/client.py):** Manages account authentication, balance verification, and live contract execution routing.
+*   **[MarketSnapshot](src/jiggon/analysis/market.py):** Processes raw tick data into synthetically constructed OHLC (Open, High, Low, Close) candles to calculate critical technical indicators (EMA, RSI, ATR, MACD).
+*   **[ExecutionEngine](src/jiggon/execution/engine.py):** The central decision matrix that cross-references technical signals with the `RiskState` to authorize or veto pending executions.
 
 ## Features & Capabilities
 
@@ -40,42 +40,48 @@ The application is structured around a modular execution pipeline. Key component
 *   Python 3.10 or higher.
 *   A validated Deriv account and associated API Token with `Read` and `Trade` permissions.
 
-### Deployment Instructions
+### Global Installation (Recommended)
 
-Execute the following commands in an administrative terminal to deploy the application:
+Jiggon is officially distributed via the Python Package Index (PyPI). Ensure you have Python 3.10+ installed.
 
 ```powershell
-# Navigate to the project directory
-cd C:\Users\0day\Desktop\jiggon
+pip install jiggon
+```
 
-# Initialize the Python Virtual Environment
+### Developer Setup (Building from Source)
+
+If you wish to contribute to the open-source repository or modify the source code:
+
+```powershell
+git clone https://github.com/0xP4X/jiggon.git
+cd jiggon
 python -m venv .venv
-
-# Activate the Virtual Environment
 .\.venv\Scripts\Activate.ps1
-
-# Install package dependencies
-python -m pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 ## Operational Guide
 
-To initialize the terminal application, execute the main module:
+If installed globally via PyPI, simply execute the following command anywhere in your terminal:
 
 ```powershell
-python -m app.main
+jiggon
 ```
 
 Upon initialization, the Onboarding Configuration Wizard will request the following parameters:
 
 *   **Environment:** Select `Demo` for testing algorithms without financial risk, or `Live` for real-capital deployment.
 *   **API Token:** Input your secure Deriv token.
+*   **Volatility Index**: The specific synthetic market to trade (e.g. `Vol 10`, `Vol 100 (1s)`).
+*   **Timeframe**: The granularity of the candlestick chart (from 1 Minute up to 1 Day).
+*   **Duration (Ticks)**: The length of the contract (Deriv limits this strictly to 5-10 ticks).
 *   **Strategy Aggression:** Modifies the sensitivity of the internal momentum oscillators (RSI). Options include Conservative, Balanced, or Aggressive.
 *   **Chart Theme:** Customizes the visual aesthetic of the internal candlestick chart rendering.
 
 ### Keyboard Operations
 *   `s` : Instantly toggle the Safe Mode kill-switch.
 *   `w` : Reinitialize the Onboarding Configuration Wizard.
+*   `?` : Open the built-in Help Menu for instructions and configuration details.
 *   `+` : Zoom the chart scale in.
 *   `-` : Zoom the chart scale out.
 *   `q` : Terminate the application thread safely.
@@ -86,7 +92,7 @@ Jiggon is inherently designed to protect principal capital through multiple syst
 
 1.  **Maximum Daily Drawdown:** The application tracks realized session losses against the total portfolio balance. If the threshold (e.g., 5.0%) is breached, the bot permanently halts execution for the remainder of the session.
 2.  **Take-Profit Halting:** Users may define a strict nominal profit target. Upon reaching this target, the system engages Safe Mode to preserve realized gains.
-3.  **Abnormal Volatility Rejection:** The [Average True Range (ATR)](app/analysis/indicators.py) is monitored constantly. If the current ATR surpasses the configured safe threshold, trading is temporarily suspended due to erratic market conditions.
+3.  **Abnormal Volatility Rejection:** The [Average True Range (ATR)](src/jiggon/analysis/indicators.py) is monitored constantly. If the current ATR surpasses the configured safe threshold, trading is temporarily suspended due to erratic market conditions.
 
 ## Strategy Customization
 
@@ -98,7 +104,7 @@ IF RSI < 45 AND EMA_TREND == BULLISH THEN BUY
 IF RSI > 55 AND EMA_TREND == BEARISH THEN SELL
 ```
 
-The underlying parser will translate these constraints and route them through the `calculate_confidence` matrix in [confidence.py](app/strategy/confidence.py).
+The underlying parser will translate these constraints and route them through the `calculate_confidence` matrix in [confidence.py](src/jiggon/strategy/confidence.py).
 
 ---
 

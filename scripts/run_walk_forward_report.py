@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.backtesting import BacktestConfig, load_candles_csv, run_walk_forward, write_report_files
+from jiggon.backtesting import BacktestConfig, load_candles_csv, run_walk_forward, write_report_files
 
 
 def main() -> None:

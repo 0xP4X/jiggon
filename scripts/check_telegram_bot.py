@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from aiogram import Bot
 
-from app.config import get_settings
+from jiggon.config import get_settings
 
 
 async def main() -> None:

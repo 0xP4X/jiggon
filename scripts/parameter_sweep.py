@@ -4,8 +4,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.backtesting import BacktestConfig, load_candles_csv, run_parameter_sweep, write_sweep_report
-from app.backtesting.sweep import DEFAULT_SWEEP_GRID, QUICK_SWEEP_GRID
+from jiggon.backtesting import BacktestConfig, load_candles_csv, run_parameter_sweep, write_sweep_report
+from jiggon.backtesting.sweep import DEFAULT_SWEEP_GRID, QUICK_SWEEP_GRID
 
 
 def main() -> None:

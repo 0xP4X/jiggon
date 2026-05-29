@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiggon | Quantitative Trading Terminal</title>
+    <meta name="description" content="Jiggon is an open-source, fully interactive Command Line Interface quantitative trading bot.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <!-- Fixed Blurred Background -->
+    <div class="fixed-bg"></div>
+    <div class="fixed-bg-gradients"></div>
+
+    <!-- Initial Loading Screen -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <h2 class="loader-text">JIGGON</h2>
+        <p class="loader-subtext">Initializing Subsystems...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">JIGGON</div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#strategy">Customization</a></li>
+            <li><a href="#risk">Risk Management</a></li>
+            <li><a href="#setup">Setup</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://github.com/0xP4X/jiggon" target="_blank" class="github-link">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Quantitative Trading, <span class="text-gradient">Redefined.</span></h1>
+            <p class="hero-subtitle">
+                An open-source, fully interactive CLI trading bot engineered for rigorous algorithmic execution on the <a href="https://api.deriv.com/" target="_blank" class="text-link">Deriv API</a>. Eliminate emotion. Trust the math.
+            </p>
+            <div class="cta-group">
+                <button class="btn btn-primary" onclick="openDownloadModal()">Install via Terminal</button>
+                <a href="#architecture" class="btn btn-secondary">Explore Architecture</a>
+            </div>
+        </div>
+        <div class="hero-graphic">
+            <div class="abstract-anim-container">
+                <div class="circle-ring ring-1"></div>
+                <div class="circle-ring ring-2"></div>
+                <div class="circle-ring ring-3"></div>
+                <div class="core-node"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+        <div class="section-header">
+            <h2 class="section-title">Institutional Grade <span class="text-gradient">Capabilities</span></h2>
+            <p class="section-subtitle">Engineered for precision, speed, and strict systemic discipline.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-panel anim-hover">
+                <div class="animated-icon">
+                    <div class="pulse-ring"></div>
+                    <div class="inner-dot"></div>
+                </div>
+                <h3>Low-Latency Execution</h3>
+                <p>Direct asynchronous routing to the Deriv WebSocket API ensures instantaneous order placement with zero intermediary lag.</p>
+            </div>
+            <div class="feature-card glass-panel anim-hover">
+                <div class="animated-icon">
+                    <div class="data-bars">
+                        <div class="bar b1"></div>
+                        <div class="bar b2"></div>
+                        <div class="bar b3"></div>
+                    </div>
+                </div>
+                <h3>Synthetic Market Data</h3>
+                <p>Processes raw tick data into synthetically constructed OHLC candles for precise indicator calculation across multiple timeframes.</p>
+            </div>
+            <div class="feature-card glass-panel anim-hover">
+                <div class="animated-icon">
+                    <div class="spin-box"></div>
+                </div>
+                <h3>Robust Engine</h3>
+                <p>A sophisticated central decision matrix powering a <a href="https://textual.textualize.io/" target="_blank" class="text-link">Textual</a>-based UI with built-in <a href="https://github.com/piccolomo/plotext" target="_blank" class="text-link">Plotext</a> candlestick rendering.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture section">
+        <div class="section-header">
+            <h2 class="section-title">Modular <span class="text-gradient">System Architecture</span></h2>
+            <p class="section-subtitle">Structured around a high-performance execution pipeline.</p>
+        </div>
+        <div class="arch-grid">
+            <div class="arch-card glass-panel anim-hover">
+                <div class="arch-number">01</div>
+                <h4>DerivWebSocket</h4>
+                <p>Establishes an asynchronous, persistent WebSocket connection to the <a href="https://api.deriv.com/" target="_blank" class="text-link">Deriv API</a> for real-time tick data ingestion.</p>
+            </div>
+            <div class="arch-card glass-panel anim-hover">
+                <div class="arch-number">02</div>
+                <h4>BrokerClient</h4>
+                <p>Manages account authentication, balance verification, and live contract execution routing.</p>
+            </div>
+            <div class="arch-card glass-panel anim-hover">
+                <div class="arch-number">03</div>
+                <h4>MarketSnapshot</h4>
+                <p>Processes raw tick data into synthetically constructed OHLC candles to calculate critical technical indicators.</p>
+            </div>
+            <div class="arch-card glass-panel anim-hover">
+                <div class="arch-number">04</div>
+                <h4>ExecutionEngine</h4>
+                <p>The central decision matrix cross-references technical signals with RiskState to authorize or veto pending executions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Customization Section -->
+    <section id="strategy" class="strategy section">
+        <div class="strategy-content">
+            <div class="section-header">
+                <h2 class="section-title">Algorithmic <span class="text-gradient">Customization</span></h2>
+                <p class="section-subtitle" style="margin-bottom: 3rem;">The bot supports algorithmic customization via a powerful Domain Specific Language (DSL). Users can input custom pseudo-code in the application wizard to override the default multi-timeframe strategy.</p>
+            </div>
+            
+            <div class="glass-panel code-panel anim-hover">
+                <div class="code-header">
+                    <span>custom_strategy.dsl</span>
+                </div>
+                <div class="code-body">
+<pre><code><span class="keyword">IF</span> RSI <span class="operator"><</span> <span class="number">45</span> <span class="keyword">AND</span> EMA_TREND <span class="operator">==</span> <span class="string">BULLISH</span> <span class="keyword">THEN</span> BUY
+<span class="keyword">IF</span> RSI <span class="operator">></span> <span class="number">55</span> <span class="keyword">AND</span> EMA_TREND <span class="operator">==</span> <span class="string">BEARISH</span> <span class="keyword">THEN</span> SELL</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management Section -->
+    <section id="risk" class="risk section">
+        <div class="risk-content">
+            <h2 class="section-title">Impenetrable <span class="text-gradient">Risk Controls</span></h2>
+            <p class="section-subtitle">Jiggon is inherently designed to protect principal capital through multiple systemic gates.</p>
+            <ul class="risk-list">
+                <li class="risk-item">
+                    <div class="risk-indicator"></div>
+                    <div>
+                        <h4>Maximum Daily Drawdown</h4>
+                        <p>Automatically halts execution permanently for the session if realized losses breach the predefined percentage threshold.</p>
+                    </div>
+                </li>
+                <li class="risk-item">
+                    <div class="risk-indicator"></div>
+                    <div>
+                        <h4>Take-Profit Halting</h4>
+                        <p>Engages Safe Mode automatically upon reaching nominal profit targets to preserve realized gains.</p>
+                    </div>
+                </li>
+                <li class="risk-item">
+                    <div class="risk-indicator"></div>
+                    <div>
+                        <h4>Abnormal Volatility Rejection</h4>
+                        <p>Constantly monitors Average True Range (ATR). Suspends trading if market conditions become erratic.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="risk-visual">
+            <div class="abstract-anim-container risk-anim">
+                <div class="circle-ring ring-1"></div>
+                <div class="circle-ring ring-3"></div>
+                <div class="shield-core"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Setup Section -->
+    <section id="setup" class="setup section">
+        <div class="section-header">
+            <h2 class="section-title">Developer <span class="text-gradient">Quick Start</span></h2>
+            <p class="section-subtitle">Run the terminal directly from source via Python.</p>
+        </div>
+        <div class="setup-content glass-panel anim-hover">
+            <div class="setup-steps">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <p>Initialize Environment</p>
+                    <div class="code-snippet"><code>python -m venv .venv<br>.\.venv\Scripts\Activate.ps1</code></div>
+                </div>
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <p>Install Dependencies</p>
+                    <div class="code-snippet"><code>python -m pip install -r requirements.txt</code></div>
+                </div>
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <p>Launch Terminal</p>
+                    <div class="code-snippet"><code>python -m app.main</code></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-card glass-panel anim-hover">
+                <h4>Do I need real money to test this?</h4>
+                <p>No. Jiggon fully supports Deriv's Demo Environment. You can safely test custom algorithms without any financial risk.</p>
+            </div>
+            <div class="faq-card glass-panel anim-hover">
+                <h4>What markets are supported?</h4>
+                <p>Currently, Jiggon specializes in Synthetic Volatility Indices (e.g. Vol 10, Vol 100), operating 24/7 without weekend closures.</p>
+            </div>
+            <div class="faq-card glass-panel anim-hover">
+                <h4>Is my API token secure?</h4>
+                <p>Yes. Your token is stored locally in <code>jiggon_config.json</code> and is only ever transmitted directly to the Deriv WebSocket API.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>JIGGON</h2>
+                <p>Quantitative Trading Terminal</p>
+            </div>
+            <div class="footer-links">
+                <h4>Legal Disclaimer</h4>
+                <p class="disclaimer-text">
+                    Jiggon is provided strictly for educational and informational purposes only. Trading in financial markets carries an exceptionally high level of risk. You may lose some or all of your initial investment. This software is provided "AS IS", without warranty of any kind.
+                </p>
+            </div>
+            <div class="footer-links community-links">
+                <h4>Community</h4>
+                <a href="https://github.com/0xP4X/jiggon/issues" target="_blank" class="text-link">Report an Issue</a><br><br>
+                <a href="https://github.com/0xP4X/jiggon/discussions" target="_blank" class="text-link">Discussions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jiggon Contributors. MIT Licensed.</p>
+        </div>
+    </footer>
+
+    <!-- Terminal Install Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-btn" onclick="closeDownloadModal()">&times;</span>
+            <h2 class="text-gradient">Global Installation</h2>
+            <p>Jiggon is distributed as a lightweight Python package. Ensure you have Python 3.10+ installed, then run the following command in your terminal:</p>
+            <div class="code-snippet install-snippet" onclick="copyInstallCmd()">
+                <code id="install-cmd">pip install jiggon</code>
+                <span class="copy-hint" id="copy-hint">Copy</span>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem;">After installation, simply type <code>jiggon</code> anywhere in your terminal to launch the trading bot.</p>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
