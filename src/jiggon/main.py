@@ -220,7 +220,7 @@ class OnboardingWizard(Screen):
             ),
             
             Label("Custom Algorithm", classes="wizard_label", id="custom_script_label"),
-            TextArea("IF RSI < 45 AND EMA_TREND == BULLISH THEN BUY\nIF RSI > 55 AND EMA_TREND == BEARISH THEN SELL", id="custom_script_area"),
+            TextArea("IF RSI < 30 and CLOSE < BB_LOWER and STOCH_K > STOCH_D THEN BUY\nIF RSI > 70 and CLOSE > BB_UPPER and STOCH_K < STOCH_D THEN SELL", id="custom_script_area"),
             
             Horizontal(
                 Button("Launch Terminal", variant="primary", id="launch_btn"),
@@ -810,7 +810,14 @@ class JiggonTerminal(App):
         is_profitable = (self.trades_won >= self.trades_lost) if total_trades > 0 else True
         
         if getattr(self, "use_custom_strat", False):
-            direction = parse_jiggon_strategy(self.custom_script_text, snapshot)
+            direction = parse_jiggon_strategy(
+                self.custom_script_text, 
+                snapshot, 
+                self.market.opens[-1], 
+                self.market.highs[-1], 
+                self.market.lows[-1], 
+                self.market.closes[-1]
+            )
             strategy_name = "Jiggon Custom DSL"
             
             candle_is_strong = direction != "NONE"

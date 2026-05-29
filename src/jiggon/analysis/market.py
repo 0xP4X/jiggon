@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-from jiggon.analysis.indicators import OrderBlock, atr, detect_order_blocks, ema, macd, rsi, vwap
+from jiggon.analysis.indicators import OrderBlock, atr, detect_order_blocks, ema, macd, rsi, vwap, bollinger_bands, stochastic
 
 
 @dataclass(frozen=True)
@@ -14,6 +14,10 @@ class MarketSnapshot:
     macd_line: float
     macd_signal: float
     vwap: float
+    bb_upper: float
+    bb_lower: float
+    stoch_k: float
+    stoch_d: float
     order_blocks: list[OrderBlock]
     trend: str
     momentum: str
@@ -65,6 +69,17 @@ def analyze_market(
         macd_val, signal_val, hist_val = 0.0, 0.0, 0.0
         
     vwap_val = vwap(highs, lows, closes, volumes)
+    
+    try:
+        bb_upper, _, bb_lower = bollinger_bands(closes)
+    except ValueError:
+        bb_upper, bb_lower = 0.0, 0.0
+        
+    try:
+        stoch_k, stoch_d = stochastic(highs, lows, closes)
+    except ValueError:
+        stoch_k, stoch_d = 50.0, 50.0
+        
     blocks = detect_order_blocks(opens, highs, lows, closes, volumes)
 
     return MarketSnapshot(
@@ -76,6 +91,10 @@ def analyze_market(
         macd_line=macd_val,
         macd_signal=signal_val,
         vwap=vwap_val,
+        bb_upper=bb_upper,
+        bb_lower=bb_lower,
+        stoch_k=stoch_k,
+        stoch_d=stoch_d,
         order_blocks=blocks,
         trend=classify_trend(ema20, ema50, ema200),
         momentum=classify_momentum(rsi_value, hist_val),

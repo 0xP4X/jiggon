@@ -128,3 +128,52 @@ def detect_order_blocks(opens: Sequence[float], highs: Sequence[float], lows: Se
             blocks.append(OrderBlock("bearish", float(highs[i-1]), float(lows[i-1])))
             
     return blocks
+
+
+def bollinger_bands(closes: Sequence[float], period: int = 20, std_dev_multiplier: float = 2.0) -> tuple[float, float, float]:
+    """Returns current (Upper Band, Middle Band, Lower Band)"""
+    if len(closes) < period:
+        raise ValueError("not enough values for Bollinger Bands")
+        
+    recent_closes = [float(x) for x in closes[-period:]]
+    sma = sum(recent_closes) / period
+    
+    variance = sum((x - sma) ** 2 for x in recent_closes) / period
+    std_dev = variance ** 0.5
+    
+    upper_band = sma + (std_dev * std_dev_multiplier)
+    lower_band = sma - (std_dev * std_dev_multiplier)
+    
+    return upper_band, sma, lower_band
+
+
+def stochastic(highs: Sequence[float], lows: Sequence[float], closes: Sequence[float], k_period: int = 14, d_period: int = 3) -> tuple[float, float]:
+    """Returns current (%K, %D)"""
+    if len(highs) < k_period + d_period or len(lows) < k_period + d_period or len(closes) < k_period + d_period:
+        raise ValueError("not enough values for Stochastic Oscillator")
+        
+    # Calculate fast %K for each of the last d_period candles
+    fast_k_values = []
+    for i in range(d_period):
+        idx_end = len(closes) - i
+        idx_start = idx_end - k_period
+        
+        period_highs = [float(x) for x in highs[idx_start:idx_end]]
+        period_lows = [float(x) for x in lows[idx_start:idx_end]]
+        
+        highest_high = max(period_highs)
+        lowest_low = min(period_lows)
+        current_close = float(closes[idx_end - 1])
+        
+        if highest_high - lowest_low == 0:
+            fast_k = 50.0
+        else:
+            fast_k = ((current_close - lowest_low) / (highest_high - lowest_low)) * 100
+            
+        fast_k_values.insert(0, fast_k)  # insert at beginning to maintain chronological order
+        
+    current_k = fast_k_values[-1]
+    current_d = sum(fast_k_values) / d_period  # Simple moving average of %K
+    
+    return current_k, current_d
+
