@@ -607,12 +607,28 @@ class JiggonTerminal(App):
 
     def action_copy_logs(self) -> None:
         try:
+            import os
+            from datetime import datetime
             sys_log = self.query_one("#system_log", Log)
             log_text = "\n".join(sys_log.lines)
-            self.app.clipboard = log_text
-            self.notify("Logs copied to clipboard!")
+            
+            # Try to copy to clipboard natively
+            try:
+                self.app.clipboard = log_text
+            except Exception:
+                pass
+                
+            # Always save to desktop as a fallback
+            desktop = os.path.join(os.path.expanduser("~"), "Desktop")
+            filename = f"jiggon_logs_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+            filepath = os.path.join(desktop, filename)
+            
+            with open(filepath, "w") as f:
+                f.write(log_text)
+                
+            self.notify(f"Logs saved to Desktop ({filename})!")
         except Exception as e:
-            self.notify(f"Could not copy logs: {e}", severity="error")
+            self.notify(f"Could not save logs: {e}", severity="error")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "copy_logs_btn":
