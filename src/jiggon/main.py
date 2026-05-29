@@ -644,9 +644,11 @@ class JiggonTerminal(App):
                 self.update_portfolio_table()
             elif "error" in res:
                 sys_log.write_line(f"[ERROR] Broker balance fetch failed: {res['error']['message']}")
+                self.broker = None
         except Exception as e:
             sys_log = self.query_one("#system_log", Log)
             sys_log.write_line(f"[ERROR] Exception during balance fetch: {e}")
+            self.broker = None
 
     def _trigger_tick(self):
         try:
