@@ -625,7 +625,7 @@ class JiggonTerminal(App):
             import os
             from datetime import datetime
             sys_log = self.query_one("#system_log", Log)
-            log_text = "\n".join(sys_log.lines)
+            log_text = "\n".join([line if isinstance(line, str) else line.text for line in sys_log.lines])
             
             # Try to copy to clipboard natively
             try:
