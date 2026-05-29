@@ -239,6 +239,22 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-main) !important;
 }
 
+.portfolio-btn {
+    border: 1px solid var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--primary) !important;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.portfolio-btn:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    transform: translateY(-1px);
+}
+
 /* Glass Panel Utility */
 .glass-panel {
     background: var(--bg-panel);
