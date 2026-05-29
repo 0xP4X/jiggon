@@ -117,6 +117,7 @@ class SplashScreen(Screen):
                     self.app.timeframe = int(cfg.get("timeframe", "60"))
                     self.app.account_id = cfg.get("account_id", "")
                     self.app.api_token = cfg.get("api_token", "")
+                    self.app.app_id = cfg.get("app_id", os.environ.get("DERIV_APP_ID", "36544"))
                     self.app.env_name = "Live" if self.app.api_token else "Demo"
                     
                     self.app.start_engine()
@@ -144,6 +145,9 @@ class OnboardingWizard(Screen):
             
             Label("API Token", classes="wizard_label"),
             Input(placeholder="Enter Deriv API Token...", password=True, id="token_input"),
+            
+            Label("App ID (Optional for PAT)", classes="wizard_label"),
+            Input(placeholder="Enter App ID...", id="app_id_input"),
             
             Label("Account ID (e.g. DOT12345)", classes="wizard_label"),
             Input(placeholder="Enter Account ID...", id="account_input"),
@@ -250,6 +254,7 @@ class OnboardingWizard(Screen):
                 self.query_one("#theme_select", Select).value = cfg.get("chart_theme", "catppuccin")
                 self.query_one("#account_input", Input).value = str(cfg.get("account_id", ""))
                 self.query_one("#token_input", Input).value = str(cfg.get("api_token", ""))
+                self.query_one("#app_id_input", Input).value = str(cfg.get("app_id", "36544"))
                 sys_log = self.app.query_one("#system_log", Log)
                 sys_log.write_line("[SYSTEM] Loaded configuration from disk.")
             except Exception:
@@ -292,6 +297,8 @@ class OnboardingWizard(Screen):
             self.app.timeframe = int(self.query_one("#timeframe_select", Select).value)
             self.app.api_token = self.query_one("#token_input", Input).value
             self.app.account_id = self.query_one("#account_input", Input).value
+            app_id_val = self.query_one("#app_id_input", Input).value.strip()
+            self.app.app_id = app_id_val if app_id_val else os.environ.get("DERIV_APP_ID", "36544")
             self.app.custom_script_text = self.query_one("#custom_script_area", TextArea).text
             
             strat_radios = self.query_one("#strat_radios", RadioSet)
@@ -312,7 +319,8 @@ class OnboardingWizard(Screen):
                 "aggression": self.app.aggression,
                 "chart_theme": self.app.chart_theme,
                 "account_id": getattr(self.app, "account_id", ""),
-                "api_token": getattr(self.app, "api_token", "")
+                "api_token": getattr(self.app, "api_token", ""),
+                "app_id": getattr(self.app, "app_id", "36544")
             }
             try:
                 config_path = os.path.join(os.path.dirname(__file__), "..", "jiggon_config.json")
